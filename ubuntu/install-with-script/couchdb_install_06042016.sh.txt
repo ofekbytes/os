@@ -1,0 +1,97 @@
+
+
+##sudo apt-get install build-essential -y
+##sudo apt-get install erlang-base-hipe -y
+##sudo apt-get install erlang-dev -y
+##sudo apt-get install erlang-manpages -y
+##sudo apt-get install erlang-eunit -y
+##sudo apt-get install erlang-nox -y
+##sudo apt-get install libicu-dev -y
+##sudo apt-get install libmozjs-dev -y
+##sudo apt-get install libcurl4-openssl-dev -y
+
+
+“Apache CouchDB” team
+
+Stable releases of http://couchdb.apache.org/ 
+maintained and provided by the CouchDB project and community, 
+based on the officially released tarballs.
+
+Installation should be straightforward, usual caveats around making backup
+before upgrading precautions apply, noting that between CouchDB 1.0.1 and
+1.5.0 there are a number of key changes, including the on-disk data format
+used by the .couch files was upgraded. Although it *should* keep your dbs
+intact and do the right thing for your local.ini files, always have a backup
+- or two!
+
+```shell
+# install the ppa-finding tool
+# for 12.04 release or older
+sudo apt-get install python-software-properties -y
+# for 14.04 release and newer
+sudo apt-get install software-properties-common -y
+# add the ppa - there is a ppa:couchdb/dev as well if you are feeling lucky
+sudo add-apt-repository ppa:couchdb/stable -y
+# update cached list of packages
+sudo apt-get update -y
+
+# remove any existing couchdb binaries
+sudo apt-get remove couchdb couchdb-bin couchdb-common -yf
+# see my shiny goodness - note the version number displayed and ensure its
+# what you expect before upgrading
+sudo apt-get install -V couchdb
+  Reading package lists...
+  Done Building dependency tree
+  Reading state information...
+  Done
+  The following extra packages will be installed:
+  couchdb-bin (x.y.z0-0ubuntu2) couchdb-common (x.y.z-0ubuntu2) couchdb (x.y.z-0ubuntu2)
+ … Y …
+
+# manage via upstart for 14.04
+sudo stop couchdb
+  couchdb stop/waiting
+# update /etc/couchdb/local.ini with 'bind_address=0.0.0.0' as needed
+sudo start couchdb
+  couchdb start/running, process 3541
+
+# manage via upstart for 14.04
+sudo stop couchdb
+  couchdb stop/waiting
+# update /etc/couchdb/local.ini with 'bind_address=0.0.0.0' as needed
+sudo start couchdb
+  couchdb start/running, process 3541
+
+# manage via systemd for 15.10 and newer
+sudo systemctl stop couchdb
+# update /etc/couchdb/local.ini with 'bind_address=0.0.0.0' as needed
+# or add 'level=debug' to the [log] section
+sudo systemctl start couchdb
+# systemd is not very chatty so lets get a status
+sudo systemctl status couchdb
+● couchdb.service - Apache CouchDB
+   Loaded: loaded (/lib/systemd/system/couchdb.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2016-01-31 23:50:50 UTC; 5s ago
+ Main PID: 3106 (beam.smp)
+   Memory: 20.3M
+      CPU: 394ms
+   CGroup: /system.slice/couchdb.service
+           ├─3106 /usr/lib/erlang/erts-7.0/bin/beam.smp -Bd -K true -A 4 -- -root /usr/lib/erlang -progname erl -- -home /var/lib/couchdb -- -noshell -noin...
+           └─3126 sh -s disksup
+
+Jan 31 23:50:50 u1 systemd[1]: Started Apache CouchDB.
+Jan 31 23:50:50 u1 couchdb[3106]: Apache CouchDB 1.6.1 (LogLevel=info) is starting.
+Jan 31 23:50:51 u1 couchdb[3106]: Apache CouchDB has started. Time to relax.
+Jan 31 23:50:51 u1 couchdb[3106]: [info] [<0.33.0>] Apache CouchDB has started on http://127.0.0.1:5984/
+
+# systemd is not very chatty but journalctl has your logs handy
+journalctl -xe
+```
+
+
+
+
+
+
+
+
