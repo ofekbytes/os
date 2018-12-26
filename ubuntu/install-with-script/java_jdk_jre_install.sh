@@ -4,6 +4,7 @@
 ##update the system##
 sudo apt-get update
 
+sudo apt-get upgrade
 
 ##Java-jre##
 sudo apt-get install default-jre -y
@@ -41,5 +42,12 @@ sudo apt-get install oracle-java9-installer -y
 
 ##Managing Java##
 sudo update-alternatives --config java
+
+
+##update the system##
+sudo apt-get update
+
+sudo apt-get upgrade
+
 
 ###The-End###
