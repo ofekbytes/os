@@ -12,10 +12,22 @@ sudo apt-get install default-jre -y
 sudo apt-get install default-jdk -y
 
 
+
 ##Java-open-jre7##
-sudo apt-get install openjdk-7-jre -y
+##sudo apt-get install openjdk-7-jre -y
 ##Java-open-jdk7##
-sudo apt-get install openjdk-7-jdk -y
+##sudo apt-get install openjdk-7-jdk -y
+
+##Java-open-jre8##
+##sudo apt-get install openjdk-8-jre -y
+##Java-open-jdk8##
+##sudo apt-get install openjdk-8-jdk -y
+
+##Java-open-jre9##
+sudo apt-get install openjdk-9-jre -y
+##Java-open-jdk9##
+sudo apt-get install openjdk-9-jdk -y
+
 
 
 ##oracle - old installation##
@@ -29,7 +41,7 @@ sudo apt-get update -y
 
 
 ##oracle jdk-6##
-sudo apt-get install oracle-java7-installer -y
+##sudo apt-get install oracle-java7-installer -y
 
 
 ##oracle jdk-8##
