@@ -1,0 +1,34 @@
+### apache-hadoop-big-data ###
+
+##update the system##
+sudo apt-get update
+
+sudo apt-get upgrade
+
+
+
+##Java-jdk##
+##
+### java_jdk_jre_install.sh ###
+##
+
+#### manual ########################################
+
+https://www.linuxhelp.com/how-to-install-hadoop-in-ubuntu
+
+########################################################################
+
+
+## download the hadoop package
+wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+
+## check the downloaded file using SHA-256
+wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz.mds
+
+
+
+
+##update the system##
+sudo apt-get update
+
+sudo apt-get upgrade
