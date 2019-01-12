@@ -1,2 +1,0 @@
-### apache-hadoop-big-data ###
-

@@ -83,89 +83,89 @@ OpenJDK Runtime Environment (build 1.8.0_111-8u111-b14-2ubuntu0.16.04.2-b14)
 OpenJDK 64-Bit Server VM (build 25.111-b14, mixed mode)
 Now you need to download the hadoop package.
 
-root@linuxhelp1:~# wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
---2016-11-22 03:07:07--  http://apache.mirrors.tds.net/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+root@linuxhelp1:~# wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
+--2016-11-22 03:07:07--  http://apache.mirrors.tds.net/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
 Resolving apache.mirrors.tds.net (apache.mirrors.tds.net)... 216.165.129.134
 Connecting to apache.mirrors.tds.net (apache.mirrors.tds.net)|216.165.129.134|:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 214092195 (204M) [application/x-gzip]
-Saving to: ‘ hadoop-2.7.3.tar.gz’ 
+Saving to: ‘ hadoop-2.9.2.tar.gz’ 
 
-hadoop-2.7.3.tar.gz               100%[==========================================================> ] 204.17M  87.4KB/s    in 31m 30s
+hadoop-2.9.2.tar.gz               100%[==========================================================> ] 204.17M  87.4KB/s    in 31m 30s
 
-2016-11-22 03:38:39 (111 KB/s) - ‘ hadoop-2.7.3.tar.gz’  saved [214092195/214092195]
+2016-11-22 03:38:39 (111 KB/s) - ‘ hadoop-2.9.2.tar.gz’  saved [214092195/214092195]
 In order to check the downloaded file using SHA-256.
 
-root@linuxhelp1:~# wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz.mds
---2016-11-22 03:39:20--  https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz.mds
+root@linuxhelp1:~# wget https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz.mds
+--2016-11-22 03:39:20--  https://dist.apache.org/repos/dist/release/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz.mds
 Resolving dist.apache.org (dist.apache.org)... 209.188.14.144
 Connecting to dist.apache.org (dist.apache.org)|209.188.14.144|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 958 [application/x-gzip]
-Saving to: ‘ hadoop-2.7.3.tar.gz.mds’ 
+Saving to: ‘ hadoop-2.9.2.tar.gz.mds’ 
 
-hadoop-2.7.3.tar.gz.mds           100%[==========================================================> ]     958  --.-KB/s    in 0s      
+hadoop-2.9.2.tar.gz.mds           100%[==========================================================> ]     958  --.-KB/s    in 0s      
 
-2016-11-22 03:39:21 (42.7 MB/s) - ‘ hadoop-2.7.3.tar.gz.mds’  saved [958/958]
+2016-11-22 03:39:21 (42.7 MB/s) - ‘ hadoop-2.9.2.tar.gz.mds’  saved [958/958]
 Utilize the following command for verification.
 
-root@linuxhelp1:~# shasum -a 256 hadoop-2.7.3.tar.gz
-d489df3808244b906eb38f4d081ba49e50c4603db03efd5e594a1e98b09259c2  hadoop-2.7.3.tar.gz
+root@linuxhelp1:~# shasum -a 256 hadoop-2.9.2.tar.gz
+d489df3808244b906eb38f4d081ba49e50c4603db03efd5e594a1e98b09259c2  hadoop-2.9.2.tar.gz
 Here you need to compare the value with the SHA-256 value in the .mds file.
 
-root@linuxhelp1:~# cat hadoop-2.7.3.tar.gz.mds
-hadoop-2.7.3.tar.gz:    MD5 = 34 55 BB 57 E4 B4 90 6B  BE A6 7B 58 CC A7 8F A8
-hadoop-2.7.3.tar.gz:   SHA1 = B84B 8989 3426 9C68 753E  4E03 6D21 395E 5A4A B5B1
-hadoop-2.7.3.tar.gz: RMD160 = 8FE4 A91E 8C67 2A33 C4E9  61FB 607A DBBD 1AE5 E03A
-hadoop-2.7.3.tar.gz: SHA224 = 23AB1EAB B7648921 7101671C DCF9D774 7B84AD50
+root@linuxhelp1:~# cat hadoop-2.9.2.tar.gz.mds
+hadoop-2.9.2.tar.gz:    MD5 = 34 55 BB 57 E4 B4 90 6B  BE A6 7B 58 CC A7 8F A8
+hadoop-2.9.2.tar.gz:   SHA1 = B84B 8989 3426 9C68 753E  4E03 6D21 395E 5A4A B5B1
+hadoop-2.9.2.tar.gz: RMD160 = 8FE4 A91E 8C67 2A33 C4E9  61FB 607A DBBD 1AE5 E03A
+hadoop-2.9.2.tar.gz: SHA224 = 23AB1EAB B7648921 7101671C DCF9D774 7B84AD50
                               6A74E300 AE6617FA
-hadoop-2.7.3.tar.gz: SHA256 = D489DF38 08244B90 6EB38F4D 081BA49E 50C4603D
+hadoop-2.9.2.tar.gz: SHA256 = D489DF38 08244B90 6EB38F4D 081BA49E 50C4603D
                               B03EFD5E 594A1E98 B09259C2
-hadoop-2.7.3.tar.gz: SHA384 = EFB42E60 3AF4FFB2 BA9F4CF4 1B56F71B D3F3BD8F
+hadoop-2.9.2.tar.gz: SHA384 = EFB42E60 3AF4FFB2 BA9F4CF4 1B56F71B D3F3BD8F
                               23331C25 27267762 FDEB67F0 F2B6F56D 797842DB
                               BB8C9F75 9DBA195D
-hadoop-2.7.3.tar.gz: SHA512 = 52452D2F 7D0B308F 8BB53ADD B81D98D6 D71F3A7C
+hadoop-2.9.2.tar.gz: SHA512 = 52452D2F 7D0B308F 8BB53ADD B81D98D6 D71F3A7C
                               F5A0C5D8 311C17DD 902E052C 3F4ADD3F EE3C5EA2
                               E6C749D3 476E452F ED50818D 11001D87 CFEC039D
                               9A8BADE5
 Extract the downloaded hadoop package.
 
-root@linuxhelp1:~# tar -xvzf hadoop-2.7.3.tar.gz
-hadoop-2.7.3/
-hadoop-2.7.3/bin/
-hadoop-2.7.3/bin/hadoop
-hadoop-2.7.3/bin/hadoop.cmd
-hadoop-2.7.3/bin/rcc
-hadoop-2.7.3/bin/hdfs
-hadoop-2.7.3/bin/hdfs.cmd
-hadoop-2.7.3/bin/container-executor
-hadoop-2.7.3/bin/test-container-executor
-hadoop-2.7.3/bin/yarn
-hadoop-2.7.3/bin/yarn.cmd
-hadoop-2.7.3/bin/mapred
-hadoop-2.7.3/bin/mapred.cmd
-hadoop-2.7.3/etc/
-hadoop-2.7.3/etc/hadoop/
-hadoop-2.7.3/etc/hadoop/core-site.xml
-hadoop-2.7.3/etc/hadoop/hadoop-env.cmd
-hadoop-2.7.3/etc/hadoop/hadoop-metrics2.properties
-hadoop-2.7.3/etc/hadoop/hadoop-policy.xml
+root@linuxhelp1:~# tar -xvzf hadoop-2.9.2.tar.gz
+hadoop-2.9.2/
+hadoop-2.9.2/bin/
+hadoop-2.9.2/bin/hadoop
+hadoop-2.9.2/bin/hadoop.cmd
+hadoop-2.9.2/bin/rcc
+hadoop-2.9.2/bin/hdfs
+hadoop-2.9.2/bin/hdfs.cmd
+hadoop-2.9.2/bin/container-executor
+hadoop-2.9.2/bin/test-container-executor
+hadoop-2.9.2/bin/yarn
+hadoop-2.9.2/bin/yarn.cmd
+hadoop-2.9.2/bin/mapred
+hadoop-2.9.2/bin/mapred.cmd
+hadoop-2.9.2/etc/
+hadoop-2.9.2/etc/hadoop/
+hadoop-2.9.2/etc/hadoop/core-site.xml
+hadoop-2.9.2/etc/hadoop/hadoop-env.cmd
+hadoop-2.9.2/etc/hadoop/hadoop-metrics2.properties
+hadoop-2.9.2/etc/hadoop/hadoop-policy.xml
 .
 .
 .
-hadoop-2.7.3/share/hadoop/tools/lib/asm-3.2.jar
-hadoop-2.7.3/include/
-hadoop-2.7.3/include/hdfs.h
-hadoop-2.7.3/include/Pipes.hh
-hadoop-2.7.3/include/TemplateFactory.hh
-hadoop-2.7.3/include/StringUtils.hh
-hadoop-2.7.3/include/SerialUtils.hh
-hadoop-2.7.3/LICENSE.txt
-hadoop-2.7.3/NOTICE.txt
-hadoop-2.7.3/README.txt
+hadoop-2.9.2/share/hadoop/tools/lib/asm-3.2.jar
+hadoop-2.9.2/include/
+hadoop-2.9.2/include/hdfs.h
+hadoop-2.9.2/include/Pipes.hh
+hadoop-2.9.2/include/TemplateFactory.hh
+hadoop-2.9.2/include/StringUtils.hh
+hadoop-2.9.2/include/SerialUtils.hh
+hadoop-2.9.2/LICENSE.txt
+hadoop-2.9.2/NOTICE.txt
+hadoop-2.9.2/README.txt
 Then move the extracted files into /usr/local.
 
-root@linuxhelp1:~# mv hadoop-2.7.3 /usr/local/hadoop
+root@linuxhelp1:~# mv hadoop-2.9.2 /usr/local/hadoop
 Now configure the java home Hadoop requires that you set the path to Java, either as an environment variable or in the Hadoop configuration file.
 
 root@linuxhelp1:~# readlink -f /usr/bin/java | sed " s:bin/java::" 
@@ -207,7 +207,7 @@ root@linuxhelp1:~# mkdir ~/input
 root@linuxhelp1:~# cp /usr/local/hadoop/etc/hadoop/*.xml ~/input
 Finally run the following command to grep the MapReduce hadoop-mapreduce-examples program and to execute its code.
 
-root@linuxhelp1:~# /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar grep ~/input ~/grep_example ' principle[.]*' 
+root@linuxhelp1:~# /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.2.jar grep ~/input ~/grep_example ' principle[.]*' 
 16/11/22 03:47:50 INFO Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
 16/11/22 03:47:50 INFO jvm.JvmMetrics: Initializing JVM Metrics with processName=JobTracker, sessionId=
 16/11/22 03:47:50 INFO input.FileInputFormat: Total input paths to process : 8
