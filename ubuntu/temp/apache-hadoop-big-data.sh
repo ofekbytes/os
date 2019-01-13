@@ -109,4 +109,30 @@ ls -lih | grep hadoop
 # 48239394 -rw-rw-r-- 1 yaron yaron  990 נוב 20 04:42 hadoop-2.9.2.tar.gz.mds
 
 
+# move folder to "/usr/local/hadoop"
+mv hadoop-2.9.2 /usr/local/hadoop
+
+
+# display on screen path to java.
+readlink -f /usr/bin/java | sed " s:bin/java::"
+
+## output ##
+# /usr/lib/jvm/java-8-oracle/jre/
+
+
+# edit "hadoop-env.sh" file and add the static value and dynamic value
+# vim/nano
+nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+
+
+#export JAVA_HOME=${JAVA_HOME}
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed " s:bin/java::" )
+
+
+# run the hadoop.
+/usr/local/hadoop/bin/hadoop
+
+
+
 

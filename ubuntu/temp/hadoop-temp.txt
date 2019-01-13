@@ -166,7 +166,8 @@ hadoop-2.9.2/README.txt
 Then move the extracted files into /usr/local.
 
 root@linuxhelp1:~# mv hadoop-2.9.2 /usr/local/hadoop
-Now configure the java home Hadoop requires that you set the path to Java, either as an environment variable or in the Hadoop configuration file.
+Now configure the java home Hadoop requires that you set the path to Java, 
+either as an environment variable or in the Hadoop configuration file.
 
 root@linuxhelp1:~# readlink -f /usr/bin/java | sed " s:bin/java::" 
 /usr/lib/jvm/java-8-openjdk-amd64/jre/
@@ -199,7 +200,8 @@ Usage: hadoop [--config confdir] [COMMAND | CLASSNAME]
   trace                view and modify Hadoop tracing settings
 
 Most commands print help when invoked w/o parameters.
-Once the Hadoop is configured successfully, run it in stand-alone mode. Then create a new directory called input in home directory.
+Once the Hadoop is configured successfully, run it in stand-alone mode.
+Then create a new directory called input in home directory.
 
 Copy the Hadoop' s configuration files into the newly created directory to use those files as our data.
 
