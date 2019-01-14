@@ -1,0 +1,80 @@
+
+
+Description : bashrc is a shell script file that Bash runs when it is started interactively. we  can put any command or script in this file which you want to type from the command prompt. we can insert commands here to set up the shell for use in our particular environment, or to customize things as per our preferences.
+1).bashrc
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
+
+2)hadoop-env.sh
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+3)core-site.xml
+
+<property>
+<name>fs.default.name</name>
+<value>hdfs://localhost:9000</value>
+</property>
+
+4)hdfs-site.xml
+
+<property>
+<name>dfs.replication</name>
+<value>1</value>
+</property>
+<property>
+<name>dfs.namenode.name.dir</name>
+<value>file:/usr/local/hadoop_tmp/hdfs/namenode</value>
+</property>
+<property>
+<name>dfs.datanode.data.dir</name>
+<value>file:/usr/local/hadoop_tmp/hdfs/datanode</value>
+</property>
+
+5)yarn-site.xml
+
+<property>
+
+<name>yarn.nodemanager.aux-services</name>
+<value>mapreduce_shuffle</value>
+</property>
+<property>
+<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+<value>org.apache.hadoop.mapred.ShuffleHandler</value>
+</property>
+
+6)mapred-site.xml
+
+<property>
+<name>mapreduce.framework.name</name>
+<value>yarn</value>
+</property>
+
+Java
+
+Hadoop is a framework which is written in Java which runs the applications on large clusters of commodity hardware(General Purpose Hardware) which is very similar to the Google File System (GFS). Hadoop Distributed File System is a highly fault-tolerant system which is design to used on low budget hardware.It provides high throughput access to application data and is suitable for applications that have large data sets.
+
+sudo
+
+We uses the dedicated user for installing the hadoop. But this is not recomended but it helps to separate the Hadoop installation from other software applications and user accounts running on the same machine which isolate security, permission and backup.
+
+The sudo command is used to elevate your permissions for a linux command.we can use the sudo command to run a command as any other user although it is commonly used to run a command as the root user.If we have multiple users on our computer then we probably don't want all of the users to be administrators because administrators can do things like installing or uninstalling the sytem applications or can change key system settings.
+
+SSH
+
+Hadoop requires SSH access to manage its nodes which include remote machines and local machine if we want to use Hadoop on it For our single-node setup of Hadoop, we need to configure SSH access to localhost for the hadoopusr.Ssh-keygen -t rsa -P “ ”
+
+~/.ssh/authorized_keys are keys of other computers that you connected to/trust, not our own key.we have to add the public key of our computer to the authorized_keys file of the computer we want to access using SSH Keys.
+
+-p parent directory
+
+-R recursive

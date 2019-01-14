@@ -15,6 +15,11 @@ sudo apt-get upgrade
 ##
 #################################
 
+java -version
+# java version "1.8.0_191"
+# Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
+# Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
+
 
 ## download the hadoop package
 wget http://apache.mirrors.tds.net/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
@@ -133,6 +138,57 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed " s:bin/java::" )
 # run the hadoop.
 /usr/local/hadoop/bin/hadoop
 
+## output ##
+# 
+# Usage: hadoop [--config confdir] [COMMAND | CLASSNAME]
+#   CLASSNAME            run the class named CLASSNAME
+#  or
+#   where COMMAND is one of:
+#   fs                   run a generic filesystem user client
+#   version              print the version
+#   jar <jar>            run a jar file
+#                        note: please use "yarn jar" to launch
+#                              YARN applications, not this command.
+#   checknative [-a|-h]  check native hadoop and compression libraries availability
+#   distcp <srcurl> <desturl> copy file or directories recursively
+#   archive -archiveName NAME -p <parent path> <src>* <dest> create a hadoop archive
+#   classpath            prints the class path needed to get the
+#                        Hadoop jar and the required libraries
+#   credential           interact with credential providers
+#   daemonlog            get/set the log level for each daemon
+#   trace                view and modify Hadoop tracing settings
+
+# Most commands print help when invoked w/o parameters.
 
 
+# run it in stand-alone mode (service ?)
+#
 
+# create a new directory called input in home directory.
+mkdir ~/hadoop.input
+
+# copy "*.xml" to imput folder
+cp /usr/local/hadoop/etc/hadoop/*.xml ~/hadoop.input
+
+# "xml" file list
+ll ~/hadoop.input/
+
+## output ##
+# 
+# total 56
+# drwxrwxr-x  2 yaron yaron  4096 ינו 14 12:09 ./
+# drwxr-xr-x 38 yaron yaron  4096 ינו 14 12:09 ../
+# -rw-r--r--  1 yaron yaron  7861 ינו 14 12:09 capacity-scheduler.xml
+# -rw-r--r--  1 yaron yaron   774 ינו 14 12:09 core-site.xml
+# -rw-r--r--  1 yaron yaron 10206 ינו 14 12:09 hadoop-policy.xml
+# -rw-r--r--  1 yaron yaron   775 ינו 14 12:09 hdfs-site.xml
+# -rw-r--r--  1 yaron yaron   620 ינו 14 12:09 httpfs-site.xml
+# -rw-r--r--  1 yaron yaron  3518 ינו 14 12:09 kms-acls.xml
+# -rw-r--r--  1 yaron yaron  5939 ינו 14 12:09 kms-site.xml
+# -rw-r--r--  1 yaron yaron   690 ינו 14 12:09 yarn-site.xml
+
+
+# Finally run the following command to grep the 
+# MapReduce hadoop-mapreduce-examples program and to execute its code.
+
+/usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.2.jar grep ~/hadoop.input ~/grep_example ' principle[.]*' 
