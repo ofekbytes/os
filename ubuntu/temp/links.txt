@@ -12,3 +12,16 @@ https://www.youtube.com/watch?v=ks7VL...
 ================== Social Links ==================
 
 FaceBook - https://www.facebook.com/frugalisminds/
+
+
+
+===== apache links =====
+
+https://www.youtube.com/watch?v=26ipmonPmRw
+
+https://www.youtube.com/watch?v=Feui5F42bII
+
+https://www.youtube.com/watch?v=6-yaGFQK9Ng
+
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04
+==================================
