@@ -1,8 +1,18 @@
 
 ## apache-tom-cat ##
 
+## https://tomcat.apache.org/download-90.cgi ##
 
+## file:///home/yaron/Downloads/apache-tomcat-9.0.16/webapps/docs/index.html ##
+ 
 ## https://help.ubuntu.com/lts/serverguide/tomcat.html.en ##
 
+## https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04 ##
 
+## https://www.digitalocean.com/community/tutorials/install-tomcat-9-ubuntu-1804 ##
 
+## https://tecadmin.net/install-tomcat-9-on-ubuntu/ ##
+
+## https://www.linuxtechi.com/install-apache-tomcat-9-ubuntu-18-04-16-04-server/ ##
+
+##  ##
