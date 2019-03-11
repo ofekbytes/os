@@ -87,10 +87,10 @@ echo "##"
 sudo service smbd restart
 
 #2# 
-###sudo service smb restart
+###sudo /etc/init.d/smbd restart
 
 #3#
-###sudo /etc/init.d/smb reload
+###sudo /etc/init.d/smbd reload
 
 
 ##--[End]--##
