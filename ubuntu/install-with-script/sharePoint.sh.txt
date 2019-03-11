@@ -1,14 +1,27 @@
 #
-# ubuntu share point - script #
+# ubuntu share point - manual #
 #
 
 
 ##--[Begin]--##
 
 
+# sharing a folder/directory for a users or group of users/
+
+# tip :
+# "yaron" is the logged user in the current computer 
+# and throw his user we will make the installation script.
+
+# First thing that you should do, 
+# is to update your os, using 
+# update and upgrade parameters, 
+# from the "apt-get" commands.
+# sudo admin password will be asked for the installation script.
+
 # #1 --[update os]-- #
 sudo apt-get update -y
 sudo apt-get upgrade -y
+
 
 # #2 --[create a new group]--
 sudo groupadd -g 1100 kessler
@@ -16,6 +29,9 @@ sudo groupadd -g 1100 kessler
 # #3 --[check the group]-- 
 # check if the new group exists
 cat /etc/group | grep kessler
+
+#output - example
+#kessler:x:1100
 
 # #4 --[add user to group]--
 sudo adduser jaron kessler
@@ -28,6 +44,9 @@ sudo adduser suzie kessler
 # check if the new users exist in the new group
 cat /etc/group | grep kessler
 
+# output - example
+# kessler:x:1100:yaron,ofir,noam,suzie
+
 # #6 --[group owner permissions]-- 
 # set group directory/folder for the group owners
 sudo chown -Rv yaron:kessler /srv
@@ -38,6 +57,22 @@ sudo chmod -Rv 774 /srv
 
 # #8 --[check directory/folder permission]--
 ls -lih / | grep srv
+
+# output - example
+# 40894465 drwxr-xr-x  21 yaron kessler 4.0K מרץ  8 16:28 srv
+
+##--TIP--##
+
+# 7 = "rwx", # 6 = "rw" ,# 4 = "r"
+# r=read, w=write, x=execute
+
+# 764
+# 7=rwx --> user
+# 6=rw --> group
+# 4=r --> other
+
+# more information about it 
+# https://help.ubuntu.com/community/FilePermissions
 
 
 ##--[End]--##
