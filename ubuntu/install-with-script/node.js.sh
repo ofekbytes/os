@@ -1,10 +1,10 @@
 # 
-# Angular install
+# Node.js
 # 
 
 
 echo "."
-echo "step 1: node.js (npm) script"
+echo "node.js (npm) script"
 echo "."
 echo "."
 
@@ -52,13 +52,5 @@ npm --version
 # install/remove node.js #
 # https://github.com/nodesource/distributions/blob/master/README.md#deb
 
-
-
-echo "."
-echo "step 2: angular script
-echo "."
-echo "."
-
-npm install -g @angular/cli
 
 
