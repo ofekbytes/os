@@ -55,7 +55,7 @@ npm --version
 
 
 echo "."
-echo "step 2: angular script
+echo "step 2: angular script"
 echo "."
 echo "."
 
