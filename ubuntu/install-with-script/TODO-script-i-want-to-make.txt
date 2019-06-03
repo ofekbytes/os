@@ -1,0 +1,23 @@
+
+install & learn
+
+---[install]-----------
+
+java version 8,9,10
+agile (scrum vs watherfall)
+jenkins
+spring
+
+SQL
+SQL-mysql
+SQL-plsql
+SQL-Light (API) - local storage
+
+
+NO-SQL
+NO-SQL-mogodb
+NO-SQL-couchdb/couchdb
+NO-SQL-local/sesssion/cookies.
+
+Files: json, xml...
+
