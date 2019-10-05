@@ -18,13 +18,13 @@ echo "."
 echo "---[updating system files]---"
 echo "."
 echo "."
-sudo apt-get update
+sudo apt-get update -y
 echo "."
 echo "."
 echo "---[upgrading system files]---"
 echo "."
 echo "."
-sudo apt-get upgrade -
+sudo apt-get upgrade -y
 echo "."
 echo "."
 
@@ -34,7 +34,7 @@ echo "."
 echo "---[installing --> curl]---"
 echo "."
 echo "."
-sudo apt-get install curl
+sudo apt-get install curl -y
 
 
 echo "."
@@ -50,7 +50,7 @@ echo "."
 echo "---[installing --> nodejs]---"
 echo "."
 echo "."
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs 
 
 
 echo "."
@@ -66,13 +66,13 @@ echo "."
 echo "---[updating system files]---"
 echo "."
 echo "."
-sudo apt-get update
+sudo apt-get update -y
 echo "."
 echo "."
 echo "---[upgrading system files]---"
 echo "."
 echo "."
-sudo apt-get upgrade -
+sudo apt-get upgrade -y
 echo "."
 echo "."
 

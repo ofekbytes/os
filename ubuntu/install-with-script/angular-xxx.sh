@@ -8,13 +8,13 @@ echo "."
 echo "---[updating system files]---"
 echo "."
 echo "."
-sudo apt-get update
+sudo apt-get update -y
 echo "."
 echo "."
 echo "---[upgrading system files]---"
 echo "."
 echo "."
-sudo apt-get upgrade -
+sudo apt-get upgrade -y
 echo "."
 echo "."
 
