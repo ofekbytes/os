@@ -15,5 +15,8 @@ https://ubuntu.com/download/raspberry-pi/thank-you?version=18.04.4&architecture=
 https://ubuntu.com/download/raspberry-pi/thank-you?version=18.04.4&architecture=arm64+raspi3
 
 
+/// Create an Ubuntu image for a Raspberry Pi on Ubuntu
+https://ubuntu.com/tutorials/create-an-ubuntu-image-for-a-raspberry-pi-on-ubuntu#1-overview
+
 
 -------------

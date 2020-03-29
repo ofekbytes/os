@@ -1,0 +1,38 @@
+.
+.
+.
+---[raspberry-pi]---
+.
+.
+.
+---[verify your download image]---
+$ echo "f270d4a11fcef7f85ea77bc0642d1c6db2666ae734e9dcc4cb875a31c9f0dc57 *ubuntu-18.04.4-preinstalled-server-arm64+raspi3.img.xz" | shasum -a 256 --check
+
+/// You should get the following output: 
+/// ubuntu-18.04.4-preinstalled-server-arm64+raspi3.img.xz: OK
+
+
+echo "0382a2b87b6937ff645f59f546120e3480f2d5a2c2945712bf373379b9e82f51 *ubuntu-18.04.4-preinstalled-server-armhf+raspi3.img.xz" | shasum -a 256 --check
+
+/// You should get the following output:
+/// ubuntu-18.04.4-preinstalled-server-armhf+raspi3.iso: OK
+
+
+---[Install a desktop]---
+
+/// You can install a desktop if you like, here are some popular ones:
+/// sudo apt-get install xubuntu-desktop
+/// sudo apt-get install lubuntu-desktop
+/// sudo apt-get install kubuntu-desktop
+
+/// 1. install desktop 
+$ sudo apt-get install lubuntu-desktop
+
+/// 2. install xinit
+$ sudo apt-get install xinit
+
+/// 3. start desktop
+$ startx
+
+
+-------------
