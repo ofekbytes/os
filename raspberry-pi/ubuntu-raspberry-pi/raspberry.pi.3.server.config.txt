@@ -1,0 +1,118 @@
+
+
+
+// connect to raspberry-pi using ssh
+// raspberry-pi ip address for my device is: 10.0.0.7
+// user: ubuntu.
+$ ssh -l ubuntu 10.0.0.7
+
+
+
+// original file 
+// path: /etc/netplan/50-cloud-init.yaml
+$ cat /etc/netplan/50-cloud-init.yaml
+
+## ---[/etc/netplan/50-cloud-init.yaml]-----------------------------------------------
+
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            optional: true
+    version: 2
+
+##--------------------------------------------------------------------------------------
+
+
+// example #1:
+// raspberry-pi - create static ip
+// path: /etc/netplan/50-cloud-init.yaml
+ubuntu@ubuntu:~$ sudo vim /etc/netplan/50-cloud-init.yaml 
+
+## ---[/etc/netplan/50-cloud-init.yaml]-----------------------------------------------
+
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+
+network:
+    ethernets:
+        eth0:
+            addresses: [192.168.1.250/24, '2001:1200:1100:1000::250/64']
+            gateway4: 192.168.1.1
+            gateway6: 2001:1200:1100:1000::1
+            dhcp4: false
+            dhcp6: false
+            optional: true
+            nameservers:
+                    addresses: [190.113.220.54,190.113.220.51,190.113.220.18,'2001:1200:1100:1000::252']
+            dhcp4: true
+            optional: true
+    version: 2
+
+##--------------------------------------------------------------------------------------
+
+
+// example #2:
+// raspberry-pi - create static ip
+// path: /etc/netplan/50-cloud-init.yaml
+ubuntu@ubuntu:~$ sudo vim /etc/netplan/50-cloud-init.yaml 
+
+## ---[/etc/netplan/50-cloud-init.yaml]-----------------------------------------------
+
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    version: 2
+    ethernets:
+        eth0:
+            addresses: [10.0.0.10/24]
+            gateway4: 0.0.0.0
+            nameservers:
+            addresses: [1.1.1.1,8.8.8.8]
+            dhcp4: false
+            optional: true
+
+##--------------------------------------------------------------------------------------
+
+
+---[jron.local.network.configuration]---
+
+inet 10.0.0.9
+netmask 255.255.255.0
+broadcast 10.0.0.255
+
+// apply changes
+$ sudo netplan apply
+##--------------------------------------------------------------------------------------
+
+
+
+links:
+
+/// 
+
+
+/// ubuntu server cloud configuration
+https://www.youtube.com/watch?v=rC6_UNnmnTc
+
+
+
+
+---------------------------------------------------------------
+???? command to check
+
+/// config menu
+$ sudo respi-config
+
+/// wireless configuration
+sudo nano /etc/wpa supplicant/wpa supplicant.conf 
