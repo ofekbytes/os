@@ -45,11 +45,11 @@ sudo apt-get update -y
 
 
 ## oracle jdk-8 ##
-sudo apt-get install oracle-java8-installer -y
+#sudo apt-get install oracle-java8-installer -y
 
 
 ## oracle jdk-9 ##
-sudo apt-get install oracle-java9-installer -y
+#sudo apt-get install oracle-java9-installer -y
 
 
 ## oracle jdk-11 / 12 ##
