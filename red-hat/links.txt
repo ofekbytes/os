@@ -1,0 +1,26 @@
+
+
+----[links]------------------------
+
+
+
+----[raspberry pi]------------------------
+
+// raspberry-pi --> doc
+https://docs.fedoraproject.org/en-US/quick-docs/raspberry-pi/
+
+// raspberry-pi --> arm
+https://arm.fedoraproject.org/
+
+
+
+----[links]------------------------
+
+----[links]------------------------
+
+----[links]------------------------
+
+
+
+
+
